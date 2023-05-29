@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Baisic HTML header goes here-->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Kingdom Of Wonders-Fantasy Theme Park </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <!-- <script src='main.js'></script> -->
+    <script>
+        <!-- All javascript goes here-->
+        <!-- We are trying to fix a minimum window size here for decent viewing-->
+        function resizeToMinimum() {
+            var minimum = [1200, 800];
+            var current = [window.outerWidth, window.outerHeight];
+            var restricted = [];
+            var i = 2;
+
+            while (i-- > 0) {
+                restricted[i] = minimum[i] > current[i] ? minimum[i] : current[i];
+            }
+
+            window.resizeTo(restricted[0], restricted[1]);
+           // window.resizeTo(1200, 800);
+        }
+        <!-- Adding a on window-resize listener-->
+        window.addEventListener('resize', resizeToMinimum, false)
+    </script>
+    <script Language="JavaScript">
+        var width = 678;
+        var height = 500;
+        self.moveTo((screen.availwidth - width) / 2, (screen.availheight - height) / 2);
+        self.resizeTo(width, height);
+    </script>
+</head>
+
+<body>
+<!-- Baisic HTML main body goes here-->
+    <iframeset cols="100, *">
+
+        <!-- <iframe src="./Website-Title.html" height="270" width="1000" title="IframeTitle"></iframe>
+    <iframe src="./SideMenuBar.html" height="900" width="200" title="IframeMenu"></iframe>
+    <iframe src="./ImageSlider.html" style="float:right;width:770px;height:300px;" title="IframeImageSlider"></iframe>
+    <iframe src="./MainBody.html" style="display:flex;float:inherit" style="width:770px;height:100px;" title="IframeMainBody"></iframe> -->
+    <!-- We are loading the side menu bar of our website here-->
+        <iframe src="./html/SideMenuBar.html" width="200" height="825" id="IframeMenu" title="IframeMenu"></iframe>
+        <iframeset rows="800, 800, *" style="display:grid;float:left;">
+            <!-- We are loading the main header frame of our website here-->
+            <iframe width='800' height='280' style="float:inline-start" src="./html/Website-Title.html"
+                id="IframeTitle" title="IframeTitle"></iframe>
+                <!-- We are loading the image slider frame of our website homepage here-->
+            <iframe width='800' height='170' style="float:inherit" src="./html/ImageSlider.html"
+                id="IframeImageSlider" title="IframeImageSlider"></iframe>
+                <!-- We are loading the Main information body frame of our website homepage here-->
+            <iframe width='800' height='370' style="float:inline-end" src="./html/MainBody.html"
+            id="IframeMainBody" name="IframeMainBody" title="IframeMainBody"></iframe>
+        </iframeset>
+    </iframeset>
+
+</body>
+
+</html>
